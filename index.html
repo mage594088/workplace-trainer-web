@@ -2,6 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<script>try{var t=localStorage.getItem("wrk-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>職場小白訓練</title>
 <meta name="description" content="給台灣科技業新鮮人的職場練習題：email、會議、向上管理、勞動法規、畫大餅與 PUA、真實鬼故事。">
@@ -11,12 +12,16 @@
 <body>
 <header class="top">
   <a href="#/" class="brand">職場小白訓練</a>
-  <span class="rank" id="rank"></span>
+  <span class="row">
+    <span class="rank" id="rank"></span>
+    <button class="btn small" id="theme" type="button" aria-label="切換淺色／深色"></button>
+  </span>
 </header>
 <main id="app"><p class="muted">載入中…</p></main>
 <footer class="foot">
   <p>題目與說明由 AI 撰寫，法規與新聞都附出處；不成文規則標為「業界慣例」，各公司可能不同。內容不是法律意見，遇到實際爭議請洽勞工局或律師。</p>
   <p>練習進度只存在這台裝置的瀏覽器裡。</p>
+  <p>題目有錯或有建議，歡迎來信：<a href="mailto:mage594088@gmail.com">mage594088@gmail.com</a></p>
 </footer>
 <script src="data.js"></script>
 <script src="app.js"></script>

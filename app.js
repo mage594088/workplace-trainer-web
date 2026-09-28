@@ -131,6 +131,28 @@
     return name;
   }
 
+  // 淺色／深色：沒選過就跟系統，按一下換成另一種並記住。
+  var themeBtn = document.getElementById("theme");
+  function currentTheme() {
+    var set = document.documentElement.dataset.theme;
+    if (set) return set;
+    return matchMedia("(prefers-color-scheme: dark)").matches ?
+      "dark" : "light";
+  }
+  function showTheme() {
+    themeBtn.textContent = currentTheme() === "dark" ?
+      "☀️ 淺色" : "🌙 深色";
+  }
+  themeBtn.onclick = function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("wrk-theme", next); } catch (e) {}
+    showTheme();
+  };
+  matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", showTheme);
+  showTheme();
+
   function header() {
     document.getElementById("rank").textContent = "目前：" + rankName();
   }
